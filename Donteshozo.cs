@@ -8,7 +8,7 @@ namespace Digitalis_Nyomozas
 {
 	internal class Donteshozo
 	{
-		public Donteshozo(Gyanusitott gy, Bizonyitek b) {
+		public void Donteshozas(Gyanusitott gy, Bizonyitek b) {
 			if (b.MegbizhatosagiErtek >= 3)
 			{
 				gy.GyanusitottsagiSzint += 10;
