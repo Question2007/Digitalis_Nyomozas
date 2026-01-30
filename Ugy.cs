@@ -35,6 +35,7 @@ namespace Digitalis_Nyomozas
 		public void AllapotValtozas(string ujAllapot)
 		{
 			this.allapot = ujAllapot;
+			Console.WriteLine("Az ügy állapota frissült");
 		}
 		public override string ToString()
 		{
