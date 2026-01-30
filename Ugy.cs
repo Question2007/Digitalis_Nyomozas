@@ -32,10 +32,10 @@ namespace Digitalis_Nyomozas
 		internal List<Szemely> HozzaTartozoSzemelyek { get => hozzaTartozoSzemelyek; set => hozzaTartozoSzemelyek = value; }
 		internal List<Bizonyitek> HozzaTartozoBizonyitekok { get => hozzaTartozoBizonyitekok; set => hozzaTartozoBizonyitekok = value; }
 
-		/*public void AllapotValtozas()
+		public void AllapotValtozas(string ujAllapot)
 		{
-			this.allapot = UgyAllapota.All
-		}*/
+			this.allapot = ujAllapot;
+		}
 		public override string ToString()
 		{
 			return $"Ügy azonosító: {this.ugyAzonosito} Cím: {this.cim} Leírás: {this.leiras} Állapot: {this.allapot} Hozzá tartozó személyek: {this.hozzaTartozoSzemelyek} Hozzá tartozó bizonyítékok: {this.HozzaTartozoBizonyitekok}";
