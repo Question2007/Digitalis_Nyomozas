@@ -17,9 +17,10 @@ namespace Digitalis_Nyomozas
 
 		public string AktualisStatusz { get => aktualisStatusz; set => aktualisStatusz = value; }
 
-		public void AllapotValtoztatas(string allapot)
+		public string AllapotValtoztatas(string allapot)
 		{
 			this.aktualisStatusz = allapot;
+			return this.aktualisStatusz;
 		}
 	} 
 }
