@@ -9,10 +9,11 @@ namespace Digitalis_Nyomozas
 	internal class BizonyitekKezelo
 	{
 		private List<Bizonyitek> bizonyitekok;
+		private Adattar adatBiz;
 		private List<Bizonyitek> raktar;
 		public BizonyitekKezelo(List<Bizonyitek> bizonyitekok)
 		{
-			this.bizonyitekok = new List<Bizonyitek>();
+			this.bizonyitekok = bizonyitekok;
 			this.raktar = new List<Bizonyitek>();
 		}
 

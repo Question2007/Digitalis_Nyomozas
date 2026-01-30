@@ -29,5 +29,27 @@ namespace Digitalis_Nyomozas
 				Console.WriteLine(item);
 			}
 		}
+
+		public void Hozzarendeles_Bizonyitek(Bizonyitek b, Ugy u)
+		{
+			foreach(var item in ugyek)
+			{
+				if (item.UgyAzonosito == u.UgyAzonosito)
+				{
+					item.HozzaTartozoBizonyitekok.Add(b);
+				}
+			}
+		}
+
+		public void Hozzarendeles_Szemely(Szemely s, Ugy u)
+		{
+			foreach (var item in ugyek)
+			{
+				if (item.UgyAzonosito == u.UgyAzonosito)
+				{
+					item.HozzaTartozoSzemelyek.Add(s);
+				}
+			}
+		}
 	}
 }
