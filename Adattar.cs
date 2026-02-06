@@ -25,5 +25,10 @@ namespace Digitalis_Nyomozas
 		internal List<Ugy> UgyekLista { get => ugyekLista; set => ugyekLista = value; }
 		internal List<Szemely> SzemelyekLista { get => szemelyekLista; set => szemelyekLista = value; }
 		internal List<Bizonyitek> BizonyitekLista { get => bizonyitekLista; set => bizonyitekLista = value; }
+
+		public override string ToString()
+		{
+			return base.ToString();
+		}
 	}
 }
