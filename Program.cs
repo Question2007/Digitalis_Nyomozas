@@ -90,8 +90,20 @@
 					szemelyek.Add(uj_szemely);
 					Console.WriteLine(uj_szemely);
 				}
-				if (input == 3) { 
-					continue; 
+				if (input == 3) {
+					Console.Write("Bizonyíték azonosító: ");		
+					string bizAzonosito = Console.ReadLine();
+					Console.WriteLine("Típus (fotó, dokumentum, digitális adat): ");
+					string tipus = Console.ReadLine();
+					Console.WriteLine("Leírás: ");
+					string leiras = Console.ReadLine();
+					Console.WriteLine("Megbizhatósági érték (1-5)");
+					int megbizhatosagi_ertek = Convert.ToInt32(Console.ReadLine());
+					Bizonyitek uj_bizonyitek = new Bizonyitek(bizAzonosito, tipus, leiras, megbizhatosagi_ertek);
+
+					Console.WriteLine(uj_bizonyitek);
+					
+
 				}
 				if (input == 4) 
 				{
