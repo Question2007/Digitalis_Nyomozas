@@ -46,5 +46,25 @@ namespace Digitalis_Nyomozas
 			}
 		}
 
+		public void ListazasFelhasznalok()
+		{
+			int i = 1;
+			foreach (var item in this.FelhasznalokLista)
+			{
+				Console.WriteLine(i + ". :" + item);
+				i++;
+			}
+		}
+
+		public void ListazasBizonyitekok()
+		{
+			int i = 1;
+			foreach (var item in this.BizonyitekLista)
+			{
+				Console.WriteLine(i + ". :" + item);
+				i++;
+			}
+		}
+
 	}
 }
