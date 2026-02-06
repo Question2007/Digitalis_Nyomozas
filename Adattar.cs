@@ -36,5 +36,15 @@ namespace Digitalis_Nyomozas
 			}
 		}
 
+		public void ListazasSzemelyek()
+		{
+			int i = 1;
+			foreach (var item in this.SzemelyekLista)
+			{
+				Console.WriteLine(i + ". :" + item);
+				i++;
+			}
+		}
+
 	}
 }
