@@ -139,15 +139,33 @@
 				}
 				if (input == 5)
 				{
-					Console.WriteLine("Válasz egy gyanusítottat: ");
-					a.ListazasGyanusitottak();
-					int gyanusitott_szam = Convert.ToInt32(Console.ReadLine());
+					Console.WriteLine("1. Új gyanusított hozzáadása\r\n2. Döntéshozás ");
+					int valasztas = Convert.ToInt32(Console.ReadLine());
+					if (valasztas == 1) 
+					{
+						Console.WriteLine("Ki a gyanusított a személyek közül: ");
+						a.ListazasSzemelyek();
+						int szemelyszam = Convert.ToInt32(Console.ReadLine());
+						Console.Write("Hányas gyanusítottsági szint: ");
+						int szint = Convert.ToInt32(Console.ReadLine());
+						Console.WriteLine("Milyen állapotban van a gyanusított: ");
+						string gyanuallapot = Console.ReadLine();
+						Gyanusitott uj_gyanusitott = new Gyanusitott(a.SzemelyekLista[szemelyszam - 1], szint, gyanuallapot);
+						gyanusitottak.Add(uj_gyanusitott);
+					}
+					else if (valasztas == 2)
+					{
+						Console.WriteLine("Válasz egy gyanusítottat: ");
+						a.ListazasGyanusitottak();
+						int gyanusitott_szam = Convert.ToInt32(Console.ReadLine());
 
-					Console.WriteLine("Válasz egy bizonyítékot: ");
-					a.ListazasBizonyitekok();
-					int bizonyitek_szam = Convert.ToInt32(Console.ReadLine());
+						Console.WriteLine("Válasz egy bizonyítékot: ");
+						a.ListazasBizonyitekok();
+						int bizonyitek_szam = Convert.ToInt32(Console.ReadLine());
 
-					donteshozo.Donteshozas(a.GyanusitottLista[gyanusitott_szam-1], a.BizonyitekLista[bizonyitek_szam-1]);
+						donteshozo.Donteshozas(a.GyanusitottLista[gyanusitott_szam - 1], a.BizonyitekLista[bizonyitek_szam - 1]);
+					}
+					
 				}
 				if (input == 6)
 				{
