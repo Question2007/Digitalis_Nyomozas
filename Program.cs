@@ -30,13 +30,17 @@
 			List<Ugy> ugyek = new List<Ugy>();
 			ugyek.Add(u1);
 			ugyek.Add(u2);
-			Adattar a = new Adattar(felhasznalok, ugyek, szemelyek, bizonyitekok);
-			foreach(var item in a.SzemelyekLista)
-			{
-				Console.WriteLine(item);
-			}
+			Gyanusitott gy1 = new Gyanusitott(s1, 70, "őrizetben");
+			Gyanusitott gy2 = new Gyanusitott(s2, 67, "megfigyelés alatt");
+			List<Gyanusitott> gyanusitottak = new List<Gyanusitott>();
+			gyanusitottak.Add(gy1);
+			gyanusitottak.Add(gy2);
+
+			Adattar a = new Adattar(felhasznalok, ugyek, szemelyek, bizonyitekok, gyanusitottak);
 			int input = 0;
 			Ugy uj_ugy = new Ugy();
+
+			Donteshozo donteshozo = new Donteshozo();
 			do
 			{
 				Console.WriteLine("1. Ügyek kezelése\r\n2. Személyek kezelése\r\n3. Bizonyítékok kezelése\r\n4. Idővonal megtekintése\r\n5. Elemzés / döntések\r\n6. Kilépés");
@@ -107,10 +111,19 @@
 				}
 				if (input == 4) 
 				{
+
 				}
 				if (input == 5)
 				{
-					continue;
+					Console.WriteLine("Válasz egy gyanusítottat: ");
+					a.ListazasGyanusitottak();
+					int gyanusitott_szam = Convert.ToInt32(Console.ReadLine());
+
+					Console.WriteLine("Válasz egy bizonyítékot: ");
+					a.ListazasBizonyitekok();
+					int bizonyitek_szam = Convert.ToInt32(Console.ReadLine());
+
+					donteshozo.Donteshozas(a.GyanusitottLista[gyanusitott_szam-1], a.BizonyitekLista[bizonyitek_szam-1]);
 				}
 				if (input == 6)
 				{
