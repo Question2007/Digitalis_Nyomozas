@@ -46,13 +46,15 @@
 				if (input == 1) 
 				{
 
+					Console.WriteLine("Ügy azonosító: ");
+					string az = Console.ReadLine();
 					Console.Write("Cím: ");
 					string cim = Console.ReadLine();
 					Console.Write("Leírás: ");
 					string leiras = Console.ReadLine();
 					Console.Write("Állapot: ");
 					string allapot = Console.ReadLine();
-					uj_ugy = new Ugy("001", cim, leiras, allapot);
+					uj_ugy = new Ugy(az, cim, leiras, allapot);
 					uj_ugy.HozzatartozoFelvetel(s2);
 					uj_ugy.BizonyitekFelvetel(b2);
 					ugyek.Add(uj_ugy);

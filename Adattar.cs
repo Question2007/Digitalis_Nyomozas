@@ -35,9 +35,6 @@ namespace Digitalis_Nyomozas
 				i++;
 			}
 		}
-		public override string ToString()
-		{
-			return base.ToString();
-		}
+
 	}
 }
