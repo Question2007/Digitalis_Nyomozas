@@ -63,7 +63,16 @@
 				}
 				if (input == 2)
 				{
-					continue;
+					a.ListazasSzemelyek();
+					Console.Write("Név: ");
+					string nev = Console.ReadLine();
+					Console.Write("Életkor: ");
+					int eletkor = Convert.ToInt32(Console.ReadLine());
+					Console.Write("Megjegyzés: ");
+					string megjegyzes = Console.ReadLine();
+					Szemely uj_szemely = new Szemely(nev, eletkor, megjegyzes);
+					szemelyek.Add(uj_szemely);
+					Console.WriteLine(uj_szemely);
 				}
 				if (input == 3) { 
 					continue; 
