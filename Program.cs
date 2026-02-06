@@ -45,20 +45,36 @@
 
 				if (input == 1) 
 				{
+					Console.WriteLine("1. Új ügy hozzáadása\r\n2. Ügy állapotának megváltoztatása ");
+					int valasztas = Convert.ToInt32(Console.ReadLine());
+					if (valasztas == 1)
+					{
+						Console.WriteLine("Ügy azonosító: ");
+						string az = Console.ReadLine();
+						Console.Write("Cím: ");
+						string cim = Console.ReadLine();
+						Console.Write("Leírás: ");
+						string leiras = Console.ReadLine();
+						Console.Write("Állapot: ");
+						string allapot = Console.ReadLine();
+						uj_ugy = new Ugy(az, cim, leiras, allapot);
+						uj_ugy.HozzatartozoFelvetel(s2);
+						uj_ugy.BizonyitekFelvetel(b2);
+						ugyek.Add(uj_ugy);
+						Console.WriteLine(uj_ugy);
+					}
+					else if (valasztas == 2)
+					{
 
-					Console.WriteLine("Ügy azonosító: ");
-					string az = Console.ReadLine();
-					Console.Write("Cím: ");
-					string cim = Console.ReadLine();
-					Console.Write("Leírás: ");
-					string leiras = Console.ReadLine();
-					Console.Write("Állapot: ");
-					string allapot = Console.ReadLine();
-					uj_ugy = new Ugy(az, cim, leiras, allapot);
-					uj_ugy.HozzatartozoFelvetel(s2);
-					uj_ugy.BizonyitekFelvetel(b2);
-					ugyek.Add(uj_ugy);
-					Console.WriteLine(uj_ugy);
+						Console.WriteLine("Melyik ugyet akarja megváltoztatni: ");
+						a.ListazasUgyek();
+						int ugyszam = Convert.ToInt32(Console.ReadLine());
+
+						Console.Write("Ugy állapot változtatása erre: ");
+						string ugy_allapot = Console.ReadLine();
+						a.UgyekLista[ugyszam - 1].AllapotValtozas(ugy_allapot);
+					}
+					
 
 				}
 				if (input == 2)
@@ -79,13 +95,6 @@
 				}
 				if (input == 4) 
 				{
-					Console.WriteLine("Melyik ugyet akarja megváltoztatni: ");
-					a.ListazasUgyek();
-					int ugyszam = Convert.ToInt32(Console.ReadLine());
-
-					Console.Write("Ugy állapot változtatása erre: ");
-					string ugy_allapot = Console.ReadLine();
-					a.UgyekLista[ugyszam-1].AllapotValtozas(ugy_allapot);
 				}
 				if (input == 5)
 				{
