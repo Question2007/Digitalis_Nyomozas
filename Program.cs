@@ -36,7 +36,20 @@
 			gyanusitottak.Add(gy1);
 			gyanusitottak.Add(gy2);
 
-			Adattar a = new Adattar(felhasznalok, ugyek, szemelyek, bizonyitekok, gyanusitottak);
+			Szemely s3 = new Szemely("Kiss István", 10, "Island áldozat");
+			Szemely s4 = new Szemely("Nagy Laci", 12, "Island áldozat");
+			Tanu t1 = new Tanu(s3, "Azt hittem csokit adnak", new DateTime(2025, 05, 15));
+			Tanu t2 = new Tanu(s4, "Azt hittem nyaralni megyünk", new DateTime(2025, 07, 07));
+			List<Tanu> tanuk = new List<Tanu>();
+			tanuk.Add(t1);
+			tanuk.Add(t2);
+
+			IdovonalEsemeny i1 = new IdovonalEsemeny(new DateTime(2025, 05, 15), "Kihallgattuk Kiss István tanut.");
+			IdovonalEsemeny i2 = new IdovonalEsemeny(new DateTime(2025, 07, 07), "Kihallgattuk Nagy Laci tanut.");
+			List<IdovonalEsemeny> idovonalEsemenyek = new List<IdovonalEsemeny>();
+			idovonalEsemenyek.Add(i1);
+			idovonalEsemenyek.Add(i2);
+			Adattar a = new Adattar(felhasznalok, ugyek, szemelyek, bizonyitekok, gyanusitottak, tanuk, idovonalEsemenyek);
 			int input = 0;
 			Ugy uj_ugy = new Ugy();
 
