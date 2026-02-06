@@ -36,6 +36,7 @@
 				Console.WriteLine(item);
 			}
 			int input = 0;
+			Ugy uj_ugy = new Ugy();
 			do
 			{
 				Console.WriteLine("1. Ügyek kezelése\r\n2. Személyek kezelése\r\n3. Bizonyítékok kezelése\r\n4. Idővonal megtekintése\r\n5. Elemzés / döntések\r\n6. Kilépés");
@@ -51,10 +52,10 @@
 					string leiras = Console.ReadLine();
 					Console.Write("Állapot: ");
 					string allapot = Console.ReadLine();
-					Ugy uj_ugy = new Ugy("001", cim, leiras, allapot);
+					uj_ugy = new Ugy("001", cim, leiras, allapot);
 					uj_ugy.HozzatartozoFelvetel(s2);
 					uj_ugy.BizonyitekFelvetel(b2);
-
+					ugyek.Add(uj_ugy);
 					Console.WriteLine(uj_ugy);
 
 				}
@@ -67,9 +68,13 @@
 				}
 				if (input == 4) 
 				{
+					Console.WriteLine("Melyik ugyet akarja megváltoztatni: ");
+					a.ListazasUgyek();
+					int ugyszam = Convert.ToInt32(Console.ReadLine());
+
 					Console.Write("Ugy állapot változtatása erre: ");
 					string ugy_allapot = Console.ReadLine();
-					u1.AllapotValtozas(ugy_allapot);
+					a.UgyekLista[ugyszam-1].AllapotValtozas(ugy_allapot);
 				}
 				if (input == 5)
 				{

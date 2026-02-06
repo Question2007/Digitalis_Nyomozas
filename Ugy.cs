@@ -15,6 +15,16 @@ namespace Digitalis_Nyomozas
 		private List<Szemely> hozzaTartozoSzemelyek;
 		private List<Bizonyitek> hozzaTartozoBizonyitekok;
 
+		public Ugy()
+		{
+			this.ugyAzonosito = "";
+			this.cim = "";
+			this.leiras = "";
+			this.allapot = "";
+			this.hozzaTartozoSzemelyek = new List<Szemely>();
+			this.hozzaTartozoBizonyitekok = new List<Bizonyitek>();
+		}
+
 		public Ugy(string ugyAzonosito, string cim, string leiras, string allapot)
 		{
 			this.ugyAzonosito = ugyAzonosito;

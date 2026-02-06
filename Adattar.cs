@@ -15,10 +15,10 @@ namespace Digitalis_Nyomozas
 
 		public Adattar(List<Felhasznalo> felhasznalokLista, List<Ugy> ugyekLista, List<Szemely> szemelyekLista, List<Bizonyitek> bizonyitekLista)
 		{
-			this.felhasznalokLista = new List<Felhasznalo>();
-			this.ugyekLista = new List<Ugy>();
-			this.szemelyekLista = new List<Szemely>();
-			this.bizonyitekLista = new List<Bizonyitek>();
+			this.felhasznalokLista = felhasznalokLista;
+			this.ugyekLista = ugyekLista;
+			this.szemelyekLista = szemelyekLista;
+			this.bizonyitekLista = bizonyitekLista;
 		}
 
 		internal List<Felhasznalo> FelhasznalokLista { get => felhasznalokLista; set => felhasznalokLista = value; }
@@ -26,6 +26,15 @@ namespace Digitalis_Nyomozas
 		internal List<Szemely> SzemelyekLista { get => szemelyekLista; set => szemelyekLista = value; }
 		internal List<Bizonyitek> BizonyitekLista { get => bizonyitekLista; set => bizonyitekLista = value; }
 
+		public void ListazasUgyek()
+		{
+			int i = 1;
+			foreach(var item in this.UgyekLista)
+			{
+				Console.WriteLine(i + ". :" + item);
+				i++;
+			}
+		}
 		public override string ToString()
 		{
 			return base.ToString();
