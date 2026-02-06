@@ -117,14 +117,25 @@
 					Console.WriteLine("Megbizhatósági érték (1-5)");
 					int megbizhatosagi_ertek = Convert.ToInt32(Console.ReadLine());
 					Bizonyitek uj_bizonyitek = new Bizonyitek(bizAzonosito, tipus, leiras, megbizhatosagi_ertek);
-
+					bizonyitekok.Add(uj_bizonyitek);
 					Console.WriteLine(uj_bizonyitek);
 					
 
 				}
 				if (input == 4) 
 				{
-
+					Console.Write("Add meg az évet: ");
+					int ev = Convert.ToInt32(Console.ReadLine());
+					Console.Write("Add meg a hónapot: ");
+					int honap = Convert.ToInt32(Console.ReadLine());
+					Console.Write("Add meg a napot: ");
+					int nap = Convert.ToInt32(Console.ReadLine());
+					DateTime idopont = new DateTime(ev, honap, nap);
+					Console.Write("Adj meg egy esemény leírást: ");
+					string esemeny = Console.ReadLine();
+					IdovonalEsemeny uj_idoes = new IdovonalEsemeny(idopont, esemeny);
+					Console.WriteLine(uj_idoes);
+					idovonalEsemenyek.Add(uj_idoes);
 				}
 				if (input == 5)
 				{
